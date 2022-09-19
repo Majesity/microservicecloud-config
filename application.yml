@@ -3,13 +3,35 @@ spring:
         active:
             - dev
 ---
+server:
+    port: 1111
 spring:
     profiles: dev
     application:
-        name: microservicecloud-config-zzy-dev
+        name: microservicecloud-config-client
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #defaultZone: http://localhost:7001/eureka
+       defaultZone: http://127.0.0.1:7003/eureka/,http://192.168.141.1:7002/eureka/
+      # http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-config-client-1111
+    prefer-ip-address: true     #访问路径可以显示IP地址    
 ---
+server:
+    port: 1112
 spring:
     profiles: test
     application:
-        name: microservicecloud-config-zzy-test
+        name: microservicecloud-config-client
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #defaultZone: http://localhost:7001/eureka
+       defaultZone: http://127.0.0.1:7003/eureka/,http://192.168.141.1:7002/eureka/
+      # http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-config-client-1112
+    prefer-ip-address: true     #访问路径可以显示IP地址    
             
