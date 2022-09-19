@@ -10,7 +10,7 @@ spring:
     application:
         name: microservicecloud-config-client
 test:
-    name: dev
+    name: dev-1111
 ---
 server:
     port: 1112
@@ -19,4 +19,4 @@ spring:
     application:
         name: microservicecloud-config-client
 test:
-    name: test
+    name: test-1112
